@@ -15,13 +15,16 @@ from detectron2.data import DatasetCatalog
 from detectron2.utils.visualizer import Visualizer
 import matplotlib.pyplot as plt
 
-dataset_dicts = DatasetCatalog.get("nandos_dataset")
+config_file = 'letters_dataset'
+
 cfg = get_cfg()
-cfg.merge_from_file("configs/retinanet_R_50_FPN_3x.yaml")
-cfg.DATALOADER.NUM_WORKERS = 2
+cfg.merge_from_file(f"configs/{config_file}.yaml")
+cfg.DATALOADER.NUM_WORKERS = 1
+
+dataset_dicts = DatasetCatalog.get(cfg.DATASETS.TRAIN[0])
 
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-cfg.DATASETS.TEST = ("nandos_dataset", )
+# cfg.DATASETS.TEST = ("nandos_dataset", )
 predictor = DefaultPredictor(cfg)
 
 for d in random.sample(dataset_dicts, 3):

@@ -1,0 +1,6 @@
+_BASE_: "./base/retinanet_R_50_FPN_3x.yaml"
+INPUT:
+  MAX_SIZE_TRAIN: (1280)
+DATASETS:
+  TRAIN: ("letters_dataset", )
+OUTPUT_DIR: "model/letters/retina-r50/"

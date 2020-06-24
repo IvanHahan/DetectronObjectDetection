@@ -9,11 +9,11 @@ from tqdm import tqdm
 from utils import parse_annotation, make_dir_if_needed
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--data_dir', default='/Users/UnicornKing/20180101_120040')
-parser.add_argument('--output_image_dir', default='data/detectron/images')
-parser.add_argument('--output_label_dir', default='data/detectron/annotations')
+parser.add_argument('--data_dir', default='/Users/UnicornKing/PyCharmProjects/screenshotprocessing/data/screenshots/2')
+parser.add_argument('--output_image_dir', default='data/detectron/letters/images')
+parser.add_argument('--output_label_dir', default='data/detectron/letters/annotations')
 parser.add_argument('--image_path_prefix', default='/home/ihahanov/Projects/ObjectDetectionDetectron')
-parser.add_argument('--label_path', default='data/label.txt')
+parser.add_argument('--label_path', default='data/detectron/letters/label.txt')
 args = parser.parse_args()
 
 if __name__ == '__main__':
@@ -27,8 +27,8 @@ if __name__ == '__main__':
                    if os.path.splitext(file)[-1] == '.json']
     dirs = set(),
     for file, annot in tqdm(annotations):
-        file_name = os.path.splitext(file)[0]
-        image_name = file_name + '.jpg'
+        file_name, ext = os.path.splitext(file)
+        image_name = file_name + '.png'
         frame = cv2.imread(os.path.join(args.data_dir, image_name))
         frame_path = os.path.join(args.output_image_dir, image_name)
 

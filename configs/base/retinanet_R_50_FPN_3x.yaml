@@ -1,10 +1,10 @@
-_BASE_: "./base/Base-RetinaNet.yaml"
+_BASE_: "./Base-RetinaNet.yaml"
 MODEL:
   WEIGHTS: "model/retina-r50/model_final_5bd44e.pkl"
   RESNETS:
     DEPTH: 50
   RETINANET:
-    SCORE_THRESH_TEST: 0.5
+    SCORE_THRESH_TEST: 0.3
     NMS_THRESH_TEST: 0.2
 SOLVER:
   STEPS: (210000, 250000)

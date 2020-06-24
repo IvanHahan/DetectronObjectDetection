@@ -1,0 +1,6 @@
+_BASE_: "./base/retinanet_R_50_FPN_3x.yaml"
+INPUT:
+  MAX_SIZE_TRAIN: (1536)
+DATASETS:
+  TRAIN: ("nandos_dataset", )
+OUTPUT_DIR: "model/nandos/retina-r50/"
