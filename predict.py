@@ -21,7 +21,6 @@ cfg.merge_from_file("configs/retinanet_R_50_FPN_3x.yaml")
 cfg.DATALOADER.NUM_WORKERS = 2
 
 cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
-cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set the testing threshold for this model
 cfg.DATASETS.TEST = ("nandos_dataset", )
 predictor = DefaultPredictor(cfg)
 

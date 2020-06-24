@@ -3,6 +3,9 @@ MODEL:
   WEIGHTS: "model/retina-r50/model_final_5bd44e.pkl"
   RESNETS:
     DEPTH: 50
+  RETINANET:
+    SCORE_THRESH_TEST: 0.5
+    NMS_THRESH_TEST: 0.2
 SOLVER:
   STEPS: (210000, 250000)
   MAX_ITER: 270000
