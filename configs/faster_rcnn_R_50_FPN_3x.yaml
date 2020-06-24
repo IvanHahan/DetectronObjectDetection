@@ -1,0 +1,10 @@
+_BASE_: "./base/Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "model/r50-fpn/out/model_final.pth"
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+SOLVER:
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+OUTPUT_DIR: 'model/r50-fpn/out'

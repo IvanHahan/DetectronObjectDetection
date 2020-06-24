@@ -1,0 +1,9 @@
+_BASE_: "./base/Base-RetinaNet.yaml"
+MODEL:
+  WEIGHTS: "model/retina-r50/model_final_5bd44e.pkl"
+  RESNETS:
+    DEPTH: 50
+SOLVER:
+  STEPS: (210000, 250000)
+  MAX_ITER: 270000
+OUTPUT_DIR: 'model/retina-r50/out'
