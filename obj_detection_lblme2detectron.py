@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--data_dir', default='/Users/UnicornKing/20180101_120040')
 parser.add_argument('--output_image_dir', default='data/detectron/images')
 parser.add_argument('--output_label_dir', default='data/detectron/annotations')
-parser.add_argument('--image_path_prefix', default='/home/ihahanov/Projects/NandosDetection')
+parser.add_argument('--image_path_prefix', default='/home/ihahanov/Projects/ObjectDetectionDetectron')
 parser.add_argument('--label_path', default='data/label.txt')
 args = parser.parse_args()
 

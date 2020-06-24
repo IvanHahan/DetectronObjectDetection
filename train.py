@@ -14,9 +14,7 @@ cfg.DATASETS.TEST = ()  # no metrics implemented for this dataset
 cfg.DATALOADER.NUM_WORKERS = 2
 cfg.SOLVER.IMS_PER_BATCH = 2
 cfg.SOLVER.BASE_LR = 0.001
-cfg.SOLVER.MAX_ITER = (
-    5000
-)  # 300 iterations seems good enough, but you can certainly train longer
+cfg.SOLVER.MAX_ITER = 5000
 cfg.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = (
     128
 )  # faster, and good enough for this toy dataset
