@@ -11,6 +11,10 @@ config_file = 'letters_retina'
 
 cfg = get_cfg()
 cfg.merge_from_file(f"configs/{config_file}.yaml")
+
+checkpoint_path = os.path.join(cfg.OUTPUT_DIR, 'model_final.pth')
+if os.path.exists(checkpoint_path):
+    cfg.MODEL.WEIGHTS = checkpoint_path
 cfg.DATASETS.TEST = ()  # no metrics implemented for this dataset
 cfg.DATALOADER.NUM_WORKERS = 1
 cfg.SOLVER.IMS_PER_BATCH = 1
