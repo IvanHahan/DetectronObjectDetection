@@ -9,8 +9,8 @@ from detectron2.engine import DefaultPredictor
 from detectron2.utils.visualizer import Visualizer
 import dataset_registry
 
-config_file = 'nandos_retina'
-label_path = 'data/detectron/nandos/label.txt'
+config_file = 'letters_retina'
+label_path = 'data/detectron/letters/label.txt'
 
 with open(label_path) as f:
     labels = [i.strip() for i in f.readlines()]
@@ -27,7 +27,7 @@ cfg.MODEL.WEIGHTS = os.path.join(cfg.OUTPUT_DIR, "model_final.pth")
 # cfg.DATASETS.TEST = ("nandos_dataset", )
 predictor = DefaultPredictor(cfg)
 
-for d in random.sample(dataset_dicts, 3):
+for d in random.sample(dataset_dicts, 1):
     im = cv2.imread(d["file_name"])
     outputs = predictor(im)
     v = Visualizer(im[:, :, ::-1],

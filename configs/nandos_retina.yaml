@@ -3,4 +3,7 @@ INPUT:
   MAX_SIZE_TRAIN: (1536)
 DATASETS:
   TRAIN: ("nandos_dataset", )
+MODEL:
+  RETINANET:
+    NUM_CLASSES: 5
 OUTPUT_DIR: "model/nandos/retina-r50/"
